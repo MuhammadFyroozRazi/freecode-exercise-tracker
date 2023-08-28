@@ -2,16 +2,27 @@ const mongoose = require('mongoose')
 
 
 const ExerciseSchema = new mongoose.Schema({
-    description: {
-      type: String,
-      require:[true,'enter the description']
+    userid:{
+      type:mongoose.Types.ObjectId,
+      ref:'User',
+      required:true
     },
-    duration: {
-      type: Number
+    username:{
+      type:String,
+      required:true
     },
-    date: {
-      type: String
-    }
+    log:[{
+      date: {
+        type: String
+      },
+      description: {
+        type: String,
+        required:[true,'enter the description']
+      },
+      duration: {
+        type: Number
+      }
+    }],
   })
   
   module.exports = mongoose.model('Exercise', ExerciseSchema)
