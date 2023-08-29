@@ -6,10 +6,11 @@ const  createAndSaveUser = async (req,res) =>{
     try {
         const postUser = new User({...User,username:username})
         const saveUser = await postUser.save() 
-        res.json({
-            username,
-            _id:saveUser.id
-        })
+        return res.json(saveUser)
+        // res.json({
+        //     username,
+        //     _id:saveUser.id
+        // })
     } catch (error) {
         res.json({
             error:'can\'t create user'
