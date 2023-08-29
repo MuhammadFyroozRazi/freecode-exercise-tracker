@@ -11,6 +11,10 @@ const ExerciseSchema = new mongoose.Schema({
       type:String,
       required:true
     },
+    count:{
+      type:Number,
+      default:0
+    },
     log:[{
       date: {
         type: String
