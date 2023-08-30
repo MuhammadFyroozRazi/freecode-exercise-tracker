@@ -33,6 +33,7 @@ app.route('/api/users')
 app.route('/api/users/:_id/exercises')
 .post(createExerise)
 
+
 app.get('/api/users/:_id/logs',getUserExercise)
 
 
